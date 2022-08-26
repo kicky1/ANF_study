@@ -53,7 +53,7 @@ const obj = {
     payment: {
         amount: 10.56,
         currency: "PLN"
-    } // as Payment
+    } as Payment
 } // as const
 
 const order: Order = obj
@@ -67,7 +67,7 @@ const order: Order = obj
 // 4. LITERAŁY OBIEKTÓW
 
 // wnioskowanie dotyczy miejsca deklaracji
-const tuBedaStringi = [] // tu kompilator musi coś postanowić 🤨
+const tuBedaStringi: string[]= [] // tu kompilator musi coś postanowić 🤨
 tuBedaStringi.push(true)
 tuBedaStringi.push(125)
 
@@ -78,7 +78,8 @@ const items = [
   { key: "B", value: 2 },
   { key: "C", value: 3 },
 ]
-const result3 = items.reduce((acc, item) => {
+
+const result3 = items.reduce<Result>((acc, item) => {
   acc[item.key] = item.value
   return acc
 }, {}) // tu jest wnioskowanie - widać jedynie {}
@@ -104,9 +105,10 @@ const czasemDaSieOkreslic = (a, b) => '' + a + b
 
 // 6. ZEWNĘTRZNE ŹRÓDŁA DANYCH (nieznane w runtime)
 
-const getSomeData = async () => {
+const getSomeData = async (): Promise<object> => {
   const response = await fetch('https://jsonplaceholder.typicode.com/albums')
   const data = await response.json()
+  // return data.hejaho[1000500100900].Kaboom()[Math.random()].iWszystkoSieZgadza
   return data.hejaho[1000500100900].Kaboom()[Math.random()].iWszystkoSieZgadza
 }
 // a wynik to i tak Promise<any> 😅

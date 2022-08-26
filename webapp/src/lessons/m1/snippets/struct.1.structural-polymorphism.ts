@@ -18,6 +18,7 @@ declare let human: Human
 interface Developer extends Human {
   languages: string[]
 }
+
 declare let developer: Developer
 
 interface TaxiDriver extends Human {
@@ -39,6 +40,8 @@ human.name // ✅
 developer.languages // ✅
 human.languages // ❌
 
+developer.name // ✅ Bo mamy sytuację, w której każdy developer jest cżłowiekiem,  a każdy człowiek ma imię
+
 // analogicznie...
 
 human = webDeveloper // ✅
@@ -47,6 +50,7 @@ webDeveloper = developer // ❌
 human.name // ✅
 webDeveloper.cutPhotoshopIntoHTML // ✅
 human.cutPhotoshopIntoHTML // ❌
+
 
 human = taxiDriver // ✅
 taxiDriver = human // ❌

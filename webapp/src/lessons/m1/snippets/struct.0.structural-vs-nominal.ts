@@ -21,7 +21,7 @@ class Person {
   constructor(public name: string) { }
 }
  
-interface Dog {
+type Dog = {
   name: string
 }
 
