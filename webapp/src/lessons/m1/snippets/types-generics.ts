@@ -31,7 +31,7 @@ const storage = new StorageClass(['ANF'])
 
 // 2. GENERIC CONSTRAINTS (obostrzenia)
 
-class AnotherStorage<T > {
+class AnotherStorage<T extends { id: string }> {  // jak dodamy 'extends { id: string }' to mówimy, że T musi rozszerzać ten typ
   constructor(
     public data: T[]
   ){}
@@ -45,7 +45,7 @@ class AnotherStorage<T > {
     // nic nie gwarantuje, że `id` istnieje
   }
 }
-const anotherStorage = new AnotherStorage(['ANF'])
+const anotherStorage = new AnotherStorage([{id:'1'}])
 const element = anotherStorage.findById('95c5a122-6973-4139-98ea-7e23f3ea3546')
 // no chyba, że dodamy generic constraint: `extends { id: string }`
 
