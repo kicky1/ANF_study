@@ -83,5 +83,9 @@ interface DefaultRootState {
   myAppData: string
 }
 
-const state: DefaultRootState = {} // ❌ missing: defaultData, myAppDatats
+const state: DefaultRootState = {
+  // defaultData: 12,
+  // myAppData: "data"
+} 
+// ❌ missing: defaultData, myAppDatats
 // dla typów: ❌ Duplicate identifier

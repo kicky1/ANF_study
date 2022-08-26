@@ -109,7 +109,7 @@ const getSomeData = async (): Promise<object> => {
   const response = await fetch('https://jsonplaceholder.typicode.com/albums')
   const data = await response.json()
   // return data.hejaho[1000500100900].Kaboom()[Math.random()].iWszystkoSieZgadza
-  return data.hejaho[1000500100900].Kaboom()[Math.random()].iWszystkoSieZgadza
+  return data
 }
 // a wynik to i tak Promise<any> 😅
 

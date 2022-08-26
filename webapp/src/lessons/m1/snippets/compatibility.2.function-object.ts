@@ -15,7 +15,7 @@ var f4: Function = (n1: number, n2: string) => true
 
 // Object == {}
 // podmiana `Object` na `object` - non-primitive type
-var o1: Object = 4
+var o1: object = {imie: 'Krzysiek'}
 var o2 = {}
 var o3: {} = 4
 

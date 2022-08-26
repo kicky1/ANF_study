@@ -13,12 +13,19 @@ interface Developer extends Human {
 const john = {
   name: "John",
   languages: ['js', 'ts'],
-  // address: "Liverpool"
+  address: "Liverpool"
+}
+
+const dejv = {
+  name: "Dejv",
+  languages: ['js', 'ts'],
+  address: "Liverpool"
 }
 
 const dev: Developer = john
+const dev2: Developer = dejv
 
-// ale jak podstawimy literał, to kaboom ❌
+// ale jak podstawimy literał (czyli bez tworzenia zmiennej, do której przypisujemy obiekt np john), to kaboom ❌
 const anotherDev: Developer = {
   name: "John",
   languages: ['js', 'ts'],
